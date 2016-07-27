@@ -88,24 +88,21 @@
 
 <meta name="description" content="“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein
 
-这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。
-通过引用操纵">
+这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thinking in Java 学习笔记二--一切都是对象">
 <meta property="og:url" content="http://yoursite.com/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/index.html">
 <meta property="og:site_name" content="Leen's Blog">
 <meta property="og:description" content="“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein
 
-这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。
-通过引用操纵">
+这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。">
 <meta property="og:image" content="http://yoursite.com/\imgs\primaryType.png">
-<meta property="og:updated_time" content="2016-07-27T15:15:07.422Z">
+<meta property="og:updated_time" content="2016-07-27T15:49:20.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thinking in Java 学习笔记二--一切都是对象">
 <meta name="twitter:description" content="“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein
 
-这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。
-通过引用操纵">
+这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。">
 <meta name="twitter:image" content="http://yoursite.com/\imgs\primaryType.png">
 
 
@@ -497,10 +494,10 @@
         <blockquote>
 <p>“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein</p>
 </blockquote>
-<p>这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。</p>
+<p>这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。<br><a id="more"></a></p>
 <h2 id="通过引用操纵对象"><a href="#通过引用操纵对象" class="headerlink" title="通过引用操纵对象"></a>通过引用操纵对象</h2><p>虽然在Java中把一切都看成对象，但是对对象的控制是通过引用来操作的。想象以下看电视的场景，我们通常不会直接操作电视机来改变电视频道，调整电视音量，而是使用遥控器来完成对电视机的控制。假如把电视机当成是一个对象，遥控器则是该对象的引用。遥控器可以离开电视机独立存在，引用也可以离开对象独立存在，比如： </p>
 <blockquote>
-<figure class="highlight plain"><figcaption><span>s;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">s是一个String类型的引用，但是并没有指向任何一个对象，因此对s的操作将会报错。为了安全考虑，推荐在声明引用的时候立刻进行初始化操作。如：</div><div class="line">&gt;```String s = &quot;asdf&quot;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>s;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">s是一个String类型的引用，但是并没有指向任何一个对象，因此对s的操作将会报错。为了安全考虑，推荐在声明引用的时候立刻进行初始化操作。如：</div><div class="line">&gt;``` String s = &quot;asdf&quot;;</div></pre></td></tr></table></figure>
 </blockquote>
 <h2 id="数据存储区域"><a href="#数据存储区域" class="headerlink" title="数据存储区域"></a>数据存储区域</h2><ul>
 <li>寄存器(Register):在CPU内，存取速度最快，不能控制。</li>

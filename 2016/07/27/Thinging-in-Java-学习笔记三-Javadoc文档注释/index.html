@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Thinging in Java,Java,对象," />
+  <meta name="keywords" content="Thinging in Java,Java,Javadoc," />
 
 
 
@@ -86,19 +86,16 @@
 
 
 
-<meta name="description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：
-1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和">
+<meta name="description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thinging in Java 学习笔记三--Javadoc文档注释">
 <meta property="og:url" content="http://yoursite.com/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/index.html">
 <meta property="og:site_name" content="Leen's Blog">
-<meta property="og:description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：
-1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和">
-<meta property="og:updated_time" content="2016-07-27T15:23:51.739Z">
+<meta property="og:description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和成">
+<meta property="og:updated_time" content="2016-07-27T15:49:10.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thinging in Java 学习笔记三--Javadoc文档注释">
-<meta name="twitter:description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：
-1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和">
+<meta name="twitter:description" content="Java文档注释javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：1234567891011121314用法：　　javadoc [options] [packagenames] [sourcefiles]选项：-public 仅显示 public 类和成">
 
 
 
@@ -486,11 +483,11 @@
       
 
       
-        <h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-public 仅显示 public 类和成员</div><div class="line">-protected 显示 protected/public 类和成员 (缺省)</div><div class="line">-package 显示 package/protected/public 类和成员</div><div class="line">-private 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 @version 段</div><div class="line">-author 包含 @author 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure>
-<h2 id="文档注释的格式"><a href="#文档注释的格式" class="headerlink" title="文档注释的格式"></a>文档注释的格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* doSomething 方法的简述.</div><div class="line">* &lt;p&gt;doSomething 方法的详细说明第一行&lt;br&gt;</div><div class="line">* doSomething 方法的详细说明第二行</div><div class="line">* @param b 参数说明</div><div class="line">* @return 返回值说明</div><div class="line">*/</div><div class="line">public void doSomething(boolean b) &#123;</div><div class="line">frame.show(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一部分是简述。文档中，对于属性和方法都是先有一个列表，然后才在后面一个一个的详细的说明<br>简述部分写在一段文档注释的最前面，第一个点号 (.) 之前 (包括点号)。换句话说，就是用第一个点号分隔文档注释，之前是简述，之后是第二部分和第三部分。<br>第二部分是详细说明部分。该部分对属性或者方法进行详细的说明，在格式上没有什么特殊的要求，可以包含若干个点号。<br>第三部分是特殊说明部分。这部分包括版本说明、参数说明、返回值说明等。</p>
-<h2 id="javadoc-标记"><a href="#javadoc-标记" class="headerlink" title="javadoc 标记"></a>javadoc 标记</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">@author 标明开发该类模块的作者</div><div class="line"></div><div class="line">@version 标明该类模块的版本</div><div class="line"></div><div class="line">@see 参考转向，也就是相关主题</div><div class="line"></div><div class="line">@link package.class #member label 类似@see,用‘label’代替‘See Also’作为超链接的文本</div><div class="line"></div><div class="line">@docRoot 产生到文档根目录的路径，用于文档树页面的显示超链接</div><div class="line"></div><div class="line">@inheritDoc 从当前类的最直接基类中继承相关文档到当前的文档注释中</div><div class="line"></div><div class="line">@param 对方法中某参数的说明</div><div class="line"></div><div class="line">@return 对方法返回值的说明</div><div class="line"></div><div class="line">@exception 对方法可能抛出的异常进行说明</div><div class="line"></div><div class="line">@throws fully-qualifid-class-name description 描述为什么此特殊类型的异常会在方法调用中出现</div><div class="line"></div><div class="line">@deprecated 该标记用于指出一些旧功能已由改进过的新功能取代</div></pre></td></tr></table></figure>
+        <h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-<span class="keyword">public</span> 仅显示 <span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">protected</span> 显示 <span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员 (缺省)</div><div class="line">-<span class="keyword">package</span> 显示 <span class="keyword">package</span>/<span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">private</span> 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 <span class="meta">@version</span> 段</div><div class="line">-author 包含 <span class="meta">@author</span> 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="文档注释的格式"><a href="#文档注释的格式" class="headerlink" title="文档注释的格式"></a>文档注释的格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* doSomething 方法的简述.</div><div class="line">* &lt;p&gt;doSomething 方法的详细说明第一行&lt;br&gt;</div><div class="line">* doSomething 方法的详细说明第二行</div><div class="line">* <span class="doctag">@param</span> b 参数说明</div><div class="line">* <span class="doctag">@return</span> 返回值说明</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">frame.show(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一部分是简述。文档中，对于属性和方法都是先有一个列表，然后才在后面一个一个的详细的说明.简述部分写在一段文档注释的最前面，第一个点号 (.) 之前 (包括点号)。换句话说，就是用第一个点号分隔文档注释，之前是简述，之后是第二部分和第三部分;<br>第二部分是详细说明部分。该部分对属性或者方法进行详细的说明，在格式上没有什么特殊的要求，可以包含若干个点号;<br>第三部分是特殊说明部分。这部分包括版本说明、参数说明、返回值说明等。</p>
+<h2 id="javadoc-标记"><a href="#javadoc-标记" class="headerlink" title="javadoc 标记"></a>javadoc 标记</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">@author 标明开发该类模块的作者</div><div class="line"></div><div class="line">@version 标明该类模块的版本</div><div class="line"></div><div class="line">@see 参考转向，也就是相关主题</div><div class="line"></div><div class="line">@link package.class #member label 类似@see,用‘label’代替‘See Also’作为超链接的文本</div><div class="line"></div><div class="line">@docRoot 产生到文档根目录的路径，用于文档树页面的显示超链接</div><div class="line"></div><div class="line">@inheritDoc 从当前类的最直接基类中继承相关文档到当前的文档注释中</div><div class="line"></div><div class="line">@param 对方法中某参数的说明</div><div class="line"></div><div class="line">@return 对方法返回值的说明</div><div class="line"></div><div class="line">@exception 对方法可能抛出的异常进行说明</div><div class="line"></div><div class="line">@throws fully-qualifid-class-name description 描述为什么此特殊类型的异常会在方法调用中出现</div><div class="line"></div><div class="line">@deprecated 该标记用于指出一些旧功能已由改进过的新功能取代</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -516,7 +513,7 @@
           
             <a href="/tags/Java/" rel="tag">#Java</a>
           
-            <a href="/tags/对象/" rel="tag">#对象</a>
+            <a href="/tags/Javadoc/" rel="tag">#Javadoc</a>
           
         </div>
       

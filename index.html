@@ -480,14 +480,12 @@
 
       
         
-          
-            <h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-public 仅显示 public 类和成员</div><div class="line">-protected 显示 protected/public 类和成员 (缺省)</div><div class="line">-package 显示 package/protected/public 类和成员</div><div class="line">-private 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 @version 段</div><div class="line">-author 包含 @author 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure>
-<h2 id="文档注释的格式"><a href="#文档注释的格式" class="headerlink" title="文档注释的格式"></a>文档注释的格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* doSomething 方法的简述.</div><div class="line">* &lt;p&gt;doSomething 方法的详细说明第一行&lt;br&gt;</div><div class="line">* doSomething 方法的详细说明第二行</div><div class="line">* @param b 参数说明</div><div class="line">* @return 返回值说明</div><div class="line">*/</div><div class="line">public void doSomething(boolean b) &#123;</div><div class="line">frame.show(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一部分是简述。文档中，对于属性和方法都是先有一个列表，然后才在后面一个一个的详细的说明<br>简述部分写在一段文档注释的最前面，第一个点号 (.) 之前 (包括点号)。换句话说，就是用第一个点号分隔文档注释，之前是简述，之后是第二部分和第三部分。<br>第二部分是详细说明部分。该部分对属性或者方法进行详细的说明，在格式上没有什么特殊的要求，可以包含若干个点号。<br>第三部分是特殊说明部分。这部分包括版本说明、参数说明、返回值说明等。</p>
-<h2 id="javadoc-标记"><a href="#javadoc-标记" class="headerlink" title="javadoc 标记"></a>javadoc 标记</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">@author 标明开发该类模块的作者</div><div class="line"></div><div class="line">@version 标明该类模块的版本</div><div class="line"></div><div class="line">@see 参考转向，也就是相关主题</div><div class="line"></div><div class="line">@link package.class #member label 类似@see,用‘label’代替‘See Also’作为超链接的文本</div><div class="line"></div><div class="line">@docRoot 产生到文档根目录的路径，用于文档树页面的显示超链接</div><div class="line"></div><div class="line">@inheritDoc 从当前类的最直接基类中继承相关文档到当前的文档注释中</div><div class="line"></div><div class="line">@param 对方法中某参数的说明</div><div class="line"></div><div class="line">@return 对方法返回值的说明</div><div class="line"></div><div class="line">@exception 对方法可能抛出的异常进行说明</div><div class="line"></div><div class="line">@throws fully-qualifid-class-name description 描述为什么此特殊类型的异常会在方法调用中出现</div><div class="line"></div><div class="line">@deprecated 该标记用于指出一些旧功能已由改进过的新功能取代</div></pre></td></tr></table></figure>
-
-          
+          <h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-<span class="keyword">public</span> 仅显示 <span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">protected</span> 显示 <span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员 (缺省)</div><div class="line">-<span class="keyword">package</span> 显示 <span class="keyword">package</span>/<span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">private</span> 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 <span class="meta">@version</span> 段</div><div class="line">-author 包含 <span class="meta">@author</span> 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -613,26 +611,15 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein</p>
 </blockquote>
-<p>这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。</p>
-<h2 id="通过引用操纵对象"><a href="#通过引用操纵对象" class="headerlink" title="通过引用操纵对象"></a>通过引用操纵对象</h2><p>虽然在Java中把一切都看成对象，但是对对象的控制是通过引用来操作的。想象以下看电视的场景，我们通常不会直接操作电视机来改变电视频道，调整电视音量，而是使用遥控器来完成对电视机的控制。假如把电视机当成是一个对象，遥控器则是该对象的引用。遥控器可以离开电视机独立存在，引用也可以离开对象独立存在，比如： </p>
-<blockquote>
-<figure class="highlight plain"><figcaption><span>s;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">s是一个String类型的引用，但是并没有指向任何一个对象，因此对s的操作将会报错。为了安全考虑，推荐在声明引用的时候立刻进行初始化操作。如：</div><div class="line">&gt;```String s = &quot;asdf&quot;;</div></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="数据存储区域"><a href="#数据存储区域" class="headerlink" title="数据存储区域"></a>数据存储区域</h2><ul>
-<li>寄存器(Register):在CPU内，存取速度最快，不能控制。</li>
-<li>栈(Stack):存储速度仅次于寄存器，java引用存在该区域，而java对象不存在该区域。</li>
-<li>堆(Heap):存储Java对象，分配和存储效率比栈要低。</li>
-<li>常量存储区(Constant storage):顾名思义，存储常量。</li>
-<li>非随机存储区(Non-RAM):存储流数据和持久化数据。</li>
-</ul>
-<h2 id="特例-Java基本类型"><a href="#特例-Java基本类型" class="headerlink" title="特例:Java基本类型"></a>特例:Java基本类型</h2><p>Java 定义了9个基本类型，基本类型是常用的数据类型。和java对象不同的是，基本类型的没有引用，直接通过变量定义基本类型，该变量持有基本类型的值，存储在栈中，因此保证了效率。<br><img src="\imgs\primaryType.png" alt="image"></p>
-<p>参考文献：《Think in java》</p>
-
-          
+<p>这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -758,38 +745,12 @@
 
       
         
-          
-            <h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代价都是比较昂贵的。</p>
-<h2 id="面向对象编程OOP"><a href="#面向对象编程OOP" class="headerlink" title="面向对象编程OOP"></a>面向对象编程OOP</h2><p>面向对象方法(object-oriented approach)提出了对象(object)的概念表示问题空间中的元素，对象是独立于问题空间的。面向对象编程(OOP)从问题空间的角度而不是机器的角度去考虑问题，每一个对象包含自己的属性和行为，对象之间相互通信构成了问题的解决方案。</p>
-<h2 id="面向对象编程OOP的五个基本特性"><a href="#面向对象编程OOP的五个基本特性" class="headerlink" title="面向对象编程OOP的五个基本特性"></a>面向对象编程OOP的五个基本特性</h2><p>Alan Kay总结了smalltalk的5个面向对象基本特性，smalltalk是第一个成功的面向对象编程语言，Java语言是基于smalltalk而来的。</p>
-<ul>
-<li>所有的东西都是对象。</li>
-<li>程序是由相互传递消息的许多对象构成的。</li>
-<li>对象可以包含其它对象。</li>
-<li>每一个对象都有一个类型。</li>
-<li>所有相同类型的对象可以接受相同的消息。</li>
-</ul>
-<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><ul>
-<li><strong>类</strong>是一个通用的概念，Java、C++、C#、PHP等很多编程语言中都有类，都可以通过类创建对象，类是一个抽象的概念，对现实世界的东西进行抽象，描述一类对象的行为和状态。</li>
-<li><strong>对象</strong>是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
-</ul>
-<p><img src="\imgs\light.png" alt="image"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Light &#123;</div><div class="line">  int voltage;</div><div class="line">  int power;</div><div class="line">  </div><div class="line">  void on();</div><div class="line">  void of();</div><div class="line">  void brighten();</div><div class="line">  void dim();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上UML类图描述了类Light的属性和方法，通过<strong>class</strong>关键字定义类,Light是类名，类Light包含两个属性:voltage和power;四个方法:on(),of(),brighten(),dim()。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Light lt  = new Light();</div><div class="line">lt.on();</div></pre></td></tr></table></figure>
-<p>通过new关键字创建了一个Light类型的对象，lt是该对象的引用，通过lt对对象进行操作。</p>
-<h2 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>找到变化并且把它封装起来，你就可以在不影响其它部分的情况下修改或扩展被封装的变化部分，这是所有设计模式的基础，就是封装变化，因此封装的作用，就解决了程序的可扩展性。 </p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子类继承父类，可以继承父类的方法及属性，实现了多态以及代码的重用，因此也解决了系统的重用性和扩展性，但是继承破坏了封装，因为他是对子类开放的，修改父类会导致所有子类的改变，因此继承一定程度上又破坏了系统的可扩展性，所以继承需要慎用，只有明确的IS-A关系才能使用，同时继承在在程序开发过程中重构得到的，而不是程序设计之初就使用继承，很多面向对象开发者滥用继承，结果造成后期的代码解决不了需求的变化了。因此优先使用组合，而不是继承，是面向对象开发中一个重要的经验。 </p>
-<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>接口的多种不同的实现方式即为多态。接口是对行为的抽象，刚才在封装提到，找到变化部分并封装起来，但是封装起来后，怎么适应接下来的变化？这正是接口的作用，接口的主要目的是为不相关的类提供通用的处理服务,我们可以想象一下。比如鸟会飞，但是超人也会飞，通过飞这个接口，我们可以让鸟和超人，都实现这个接口，这就实现了系统的可维护性，可扩展性。 </p>
-<h2 id="Java-Object"><a href="#Java-Object" class="headerlink" title="Java Object"></a>Java Object</h2><p>Java单根结构，Java语言的单根结构是指java中所有的类都从一个基类继承，即java.lang.Object。java.lang.Object是所有类的父类，是一个顶级父类，在Java中是唯一没有父类的类。单根结构的优点是：</p>
-<ul>
-<li>所有的类都有同一个基本类型。</li>
-<li>所有的类都继承Objecrt类的基本操作。</li>
-<li>使垃圾回收(garbage collection)更容易实现。</li>
-</ul>
-<p>参考文献：<br>《Think in java》<br><a href="http://www.cnblogs.com/seesea125/archive/2012/04/03/2431176.html" target="_blank" rel="external">http://www.cnblogs.com/seesea125/archive/2012/04/03/2431176.html</a></p>
-
-          
+          <h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代价都是比较昂贵的。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/27/Thinking-in-Java-读书笔记一-什么是对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
