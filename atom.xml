@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://huailee.com/"/>
-  <updated>2016-07-27T15:49:10.398Z</updated>
+  <updated>2016-07-27T16:21:36.027Z</updated>
   <id>http://huailee.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://huailee.com/2016/07/27/Thinging-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89-Javadoc%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A/"/>
     <id>http://huailee.com/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/</id>
     <published>2016-07-27T15:12:13.000Z</published>
-    <updated>2016-07-27T15:49:10.398Z</updated>
+    <updated>2016-07-27T16:21:36.027Z</updated>
     <content type="html"><![CDATA[<h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-<span class="keyword">public</span> 仅显示 <span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">protected</span> 显示 <span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员 (缺省)</div><div class="line">-<span class="keyword">package</span> 显示 <span class="keyword">package</span>/<span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">private</span> 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 <span class="meta">@version</span> 段</div><div class="line">-author 包含 <span class="meta">@author</span> 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="文档注释的格式"><a href="#文档注释的格式" class="headerlink" title="文档注释的格式"></a>文档注释的格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* doSomething 方法的简述.</div><div class="line">* &lt;p&gt;doSomething 方法的详细说明第一行&lt;br&gt;</div><div class="line">* doSomething 方法的详细说明第二行</div><div class="line">* <span class="doctag">@param</span> b 参数说明</div><div class="line">* <span class="doctag">@return</span> 返回值说明</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">frame.show(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -31,11 +31,11 @@
     
     </summary>
     
-      <category term="Thinging in Java" scheme="http://huailee.com/tags/Thinging-in-Java/"/>
-    
       <category term="Java" scheme="http://huailee.com/tags/Java/"/>
     
       <category term="Javadoc" scheme="http://huailee.com/tags/Javadoc/"/>
+    
+      <category term="Thinking in Java" scheme="http://huailee.com/tags/Thinking-in-Java/"/>
     
       <category term="Java" scheme="http://huailee.com/categories/Java/"/>
     
@@ -75,9 +75,9 @@
     
       <category term="Java" scheme="http://huailee.com/tags/Java/"/>
     
-      <category term="对象" scheme="http://huailee.com/tags/%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="Thinking in Java" scheme="http://huailee.com/tags/Thinking-in-Java/"/>
+    
+      <category term="对象" scheme="http://huailee.com/tags/%E5%AF%B9%E8%B1%A1/"/>
     
       <category term="Java" scheme="http://huailee.com/categories/Java/"/>
     
