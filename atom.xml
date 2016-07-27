@@ -3,9 +3,9 @@
   <title><![CDATA[Leen's Blog]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
+  <link href="http://huailee.com/"/>
   <updated>2016-07-27T15:49:10.398Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://huailee.com/</id>
   
   <author>
     <name><![CDATA[Leen]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Thinging in Java 学习笔记三--Javadoc文档注释]]></title>
-    <link href="http://yoursite.com/2016/07/27/Thinging-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89-Javadoc%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A/"/>
-    <id>http://yoursite.com/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/</id>
+    <link href="http://huailee.com/2016/07/27/Thinging-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89-Javadoc%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A/"/>
+    <id>http://huailee.com/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/</id>
     <published>2016-07-27T15:12:13.000Z</published>
     <updated>2016-07-27T15:49:10.398Z</updated>
     <content type="html"><![CDATA[<h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-<span class="keyword">public</span> 仅显示 <span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">protected</span> 显示 <span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员 (缺省)</div><div class="line">-<span class="keyword">package</span> 显示 <span class="keyword">package</span>/<span class="keyword">protected</span>/<span class="keyword">public</span> 类和成员</div><div class="line">-<span class="keyword">private</span> 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 <span class="meta">@version</span> 段</div><div class="line">-author 包含 <span class="meta">@author</span> 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure></p>
@@ -31,20 +31,20 @@
     
     </summary>
     
-      <category term="Thinging in Java" scheme="http://yoursite.com/tags/Thinging-in-Java/"/>
+      <category term="Thinging in Java" scheme="http://huailee.com/tags/Thinging-in-Java/"/>
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://huailee.com/tags/Java/"/>
     
-      <category term="Javadoc" scheme="http://yoursite.com/tags/Javadoc/"/>
+      <category term="Javadoc" scheme="http://huailee.com/tags/Javadoc/"/>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://huailee.com/categories/Java/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Thinking in Java 学习笔记二--一切都是对象]]></title>
-    <link href="http://yoursite.com/2016/07/27/Thinking-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C-%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/</id>
+    <link href="http://huailee.com/2016/07/27/Thinking-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C-%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://huailee.com/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/</id>
     <published>2016-07-27T15:11:03.000Z</published>
     <updated>2016-07-27T15:49:20.192Z</updated>
     <content type="html"><![CDATA[<blockquote>
@@ -73,20 +73,20 @@
     
     </summary>
     
-      <category term="Thinging in Java" scheme="http://yoursite.com/tags/Thinging-in-Java/"/>
+      <category term="Thinging in Java" scheme="http://huailee.com/tags/Thinging-in-Java/"/>
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://huailee.com/tags/Java/"/>
     
-      <category term="对象" scheme="http://yoursite.com/tags/%E5%AF%B9%E8%B1%A1/"/>
+      <category term="对象" scheme="http://huailee.com/tags/%E5%AF%B9%E8%B1%A1/"/>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://huailee.com/categories/Java/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Thinking in Java 读书笔记一--什么是对象]]></title>
-    <link href="http://yoursite.com/2016/07/27/Thinking-in-Java-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2016/07/27/Thinking-in-Java-读书笔记一-什么是对象/</id>
+    <link href="http://huailee.com/2016/07/27/Thinking-in-Java-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://huailee.com/2016/07/27/Thinking-in-Java-读书笔记一-什么是对象/</id>
     <published>2016-07-27T13:13:25.000Z</published>
     <updated>2016-07-27T15:48:48.638Z</updated>
     <content type="html"><![CDATA[<h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代价都是比较昂贵的。<br><a id="more"></a></p>
@@ -124,13 +124,13 @@
     
     </summary>
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://huailee.com/tags/Java/"/>
     
-      <category term="OOP" scheme="http://yoursite.com/tags/OOP/"/>
+      <category term="OOP" scheme="http://huailee.com/tags/OOP/"/>
     
-      <category term="Thinking in Java" scheme="http://yoursite.com/tags/Thinking-in-Java/"/>
+      <category term="Thinking in Java" scheme="http://huailee.com/tags/Thinking-in-Java/"/>
     
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+      <category term="Java" scheme="http://huailee.com/categories/Java/"/>
     
   </entry>
   
