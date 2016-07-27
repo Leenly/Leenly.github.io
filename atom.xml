@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-27T14:04:23.582Z</updated>
+  <updated>2016-07-27T15:23:51.739Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Thinging in Java 学习笔记三--Javadoc文档注释]]></title>
+    <link href="http://yoursite.com/2016/07/27/Thinging-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89-Javadoc%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A/"/>
+    <id>http://yoursite.com/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/</id>
+    <published>2016-07-27T15:12:13.000Z</published>
+    <updated>2016-07-27T15:23:51.739Z</updated>
+    <content type="html"><![CDATA[<h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注释标记。它不仅提取由这些标记指示的信息，也将毗邻注释的类名或方法名提取出来。Javadoc的命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">用法：</div><div class="line">　　javadoc [options] [packagenames] [sourcefiles]</div><div class="line"></div><div class="line">选项：</div><div class="line"></div><div class="line">-public 仅显示 public 类和成员</div><div class="line">-protected 显示 protected/public 类和成员 (缺省)</div><div class="line">-package 显示 package/protected/public 类和成员</div><div class="line">-private 显示所有类和成员</div><div class="line">-d &lt;directory&gt; 输出文件的目标目录</div><div class="line">-version 包含 @version 段</div><div class="line">-author 包含 @author 段</div><div class="line">-splitindex 将索引分为每个字母对应一个文件</div><div class="line">-windowtitle &lt;text&gt; 文档的浏览器窗口标题`</div></pre></td></tr></table></figure>
+<h2 id="文档注释的格式"><a href="#文档注释的格式" class="headerlink" title="文档注释的格式"></a>文档注释的格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* doSomething 方法的简述.</div><div class="line">* &lt;p&gt;doSomething 方法的详细说明第一行&lt;br&gt;</div><div class="line">* doSomething 方法的详细说明第二行</div><div class="line">* @param b 参数说明</div><div class="line">* @return 返回值说明</div><div class="line">*/</div><div class="line">public void doSomething(boolean b) &#123;</div><div class="line">frame.show(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一部分是简述。文档中，对于属性和方法都是先有一个列表，然后才在后面一个一个的详细的说明<br>简述部分写在一段文档注释的最前面，第一个点号 (.) 之前 (包括点号)。换句话说，就是用第一个点号分隔文档注释，之前是简述，之后是第二部分和第三部分。<br>第二部分是详细说明部分。该部分对属性或者方法进行详细的说明，在格式上没有什么特殊的要求，可以包含若干个点号。<br>第三部分是特殊说明部分。这部分包括版本说明、参数说明、返回值说明等。</p>
+<h2 id="javadoc-标记"><a href="#javadoc-标记" class="headerlink" title="javadoc 标记"></a>javadoc 标记</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">@author 标明开发该类模块的作者</div><div class="line"></div><div class="line">@version 标明该类模块的版本</div><div class="line"></div><div class="line">@see 参考转向，也就是相关主题</div><div class="line"></div><div class="line">@link package.class #member label 类似@see,用‘label’代替‘See Also’作为超链接的文本</div><div class="line"></div><div class="line">@docRoot 产生到文档根目录的路径，用于文档树页面的显示超链接</div><div class="line"></div><div class="line">@inheritDoc 从当前类的最直接基类中继承相关文档到当前的文档注释中</div><div class="line"></div><div class="line">@param 对方法中某参数的说明</div><div class="line"></div><div class="line">@return 对方法返回值的说明</div><div class="line"></div><div class="line">@exception 对方法可能抛出的异常进行说明</div><div class="line"></div><div class="line">@throws fully-qualifid-class-name description 描述为什么此特殊类型的异常会在方法调用中出现</div><div class="line"></div><div class="line">@deprecated 该标记用于指出一些旧功能已由改进过的新功能取代</div></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Java文档注释"><a href="#Java文档注释" class="headerlink" title="Java文档注释"></a>Java文档注释</h2><p>javadoc是提取注释的工具，它采用部分来自Java编译器的技术，查找我们置入程序的特殊注]]>
+    </summary>
+    
+      <category term="Thinging in Java" scheme="http://yoursite.com/tags/Thinging-in-Java/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="对象" scheme="http://yoursite.com/tags/%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Thinking in Java 学习笔记二--一切都是对象]]></title>
+    <link href="http://yoursite.com/2016/07/27/Thinking-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C-%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/</id>
+    <published>2016-07-27T15:11:03.000Z</published>
+    <updated>2016-07-27T15:15:07.422Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein</p>
+</blockquote>
+<p>这句话翻译过来就是”如果我们使用不同的语言，那么我们将会看到不一样的世界。”尽管Java语言是基于C++语言而来，但是Java是更纯粹的面向对象的语言，在Java中一切都是对象。</p>
+<h2 id="通过引用操纵对象"><a href="#通过引用操纵对象" class="headerlink" title="通过引用操纵对象"></a>通过引用操纵对象</h2><p>虽然在Java中把一切都看成对象，但是对对象的控制是通过引用来操作的。想象以下看电视的场景，我们通常不会直接操作电视机来改变电视频道，调整电视音量，而是使用遥控器来完成对电视机的控制。假如把电视机当成是一个对象，遥控器则是该对象的引用。遥控器可以离开电视机独立存在，引用也可以离开对象独立存在，比如： </p>
+<blockquote>
+<figure class="highlight plain"><figcaption><span>s;```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">s是一个String类型的引用，但是并没有指向任何一个对象，因此对s的操作将会报错。为了安全考虑，推荐在声明引用的时候立刻进行初始化操作。如：</div><div class="line">&gt;```String s = &quot;asdf&quot;;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="数据存储区域"><a href="#数据存储区域" class="headerlink" title="数据存储区域"></a>数据存储区域</h2><ul>
+<li>寄存器(Register):在CPU内，存取速度最快，不能控制。</li>
+<li>栈(Stack):存储速度仅次于寄存器，java引用存在该区域，而java对象不存在该区域。</li>
+<li>堆(Heap):存储Java对象，分配和存储效率比栈要低。</li>
+<li>常量存储区(Constant storage):顾名思义，存储常量。</li>
+<li>非随机存储区(Non-RAM):存储流数据和持久化数据。</li>
+</ul>
+<h2 id="特例-Java基本类型"><a href="#特例-Java基本类型" class="headerlink" title="特例:Java基本类型"></a>特例:Java基本类型</h2><p>Java 定义了9个基本类型，基本类型是常用的数据类型。和java对象不同的是，基本类型的没有引用，直接通过变量定义基本类型，该变量持有基本类型的值，存储在栈中，因此保证了效率。<br><img src="\imgs\primaryType.png" alt="image"></p>
+<p>参考文献：《Think in java》</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>“If we spoke a different language, we would perceive a somewhat different world.”–Ludwig Wittgenstein</p>
+</blockquote>
+<p>这]]>
+    </summary>
+    
+      <category term="Thinging in Java" scheme="http://yoursite.com/tags/Thinging-in-Java/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="对象" scheme="http://yoursite.com/tags/%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Thinking in Java 读书笔记一--什么是对象]]></title>
@@ -61,28 +128,6 @@
       <category term="Thinking in Java" scheme="http://yoursite.com/tags/Thinking-in-Java/"/>
     
       <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yoursite.com/2016/07/22/hello-world/"/>
-    <id>http://yoursite.com/2016/07/22/hello-world/</id>
-    <published>2016-07-21T16:59:54.678Z</published>
-    <updated>2016-07-21T17:14:11.175Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.]]>
-    </summary>
     
   </entry>
   
