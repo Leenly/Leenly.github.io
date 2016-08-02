@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java,Thinking in Java,OOP," />
+  <meta name="keywords" content="Java,Thinking in Java,finalize," />
 
 
 
@@ -86,18 +86,19 @@
 
 
 
-<meta name="description" content="抽象几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代">
+<meta name="description" content="Thinging in Java 学习笔记四–Java finalize方法finalize的定义finalize()是java.lang.Object类中的方法：1protected void finalize() throws Throwable
+在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thinking in Java 学习笔记一--什么是对象">
-<meta property="og:url" content="http://huailee.com/2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/index.html">
+<meta property="og:title" content="Thinging in Java 学习笔记四--Java finalize方法">
+<meta property="og:url" content="http://huailee.com/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/index.html">
 <meta property="og:site_name" content="Leen's Blog">
-<meta property="og:description" content="抽象几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代">
-<meta property="og:image" content="http://huailee.com/\imgs\light.png">
-<meta property="og:updated_time" content="2016-07-28T12:50:30.469Z">
+<meta property="og:description" content="Thinging in Java 学习笔记四–Java finalize方法finalize的定义finalize()是java.lang.Object类中的方法：1protected void finalize() throws Throwable
+在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage">
+<meta property="og:updated_time" content="2016-08-02T15:10:42.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Thinking in Java 学习笔记一--什么是对象">
-<meta name="twitter:description" content="抽象几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代">
-<meta name="twitter:image" content="http://huailee.com/\imgs\light.png">
+<meta name="twitter:title" content="Thinging in Java 学习笔记四--Java finalize方法">
+<meta name="twitter:description" content="Thinging in Java 学习笔记四–Java finalize方法finalize的定义finalize()是java.lang.Object类中的方法：1protected void finalize() throws Throwable
+在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage">
 
 
 
@@ -115,7 +116,7 @@
   };
 </script>
 
-  <title> Thinking in Java 学习笔记一--什么是对象 | Leen's Blog </title>
+  <title> Thinging in Java 学习笔记四--Java finalize方法 | Leen's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -405,7 +406,7 @@
             
             
               
-                Thinking in Java 学习笔记一--什么是对象
+                Thinging in Java 学习笔记四--Java finalize方法
               
             
           </h1>
@@ -417,8 +418,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T21:13:25+08:00" content="2016-07-27">
-              2016-07-27
+            <time itemprop="dateCreated" datetime="2016-08-02T23:07:52+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
@@ -447,8 +448,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -458,7 +459,7 @@
 
           
           
-             <span id="/2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/" class="leancloud_visitors" data-flag-title="Thinking in Java 学习笔记一--什么是对象">
+             <span id="/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/" class="leancloud_visitors" data-flag-title="Thinging in Java 学习笔记四--Java finalize方法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -485,35 +486,40 @@
       
 
       
-        <h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><p>几乎所有的编程语言都提供了抽象的概念。抽象的种类和质量直接关系到问题的复杂度。汇编语是对计算机机器语言的简单抽象。FORTRAN,BASIC和C等高级语言是在汇编语言上的抽象。然而，以上这些变成语言都要求编程人员从计算机系统结构的角度(面向机器建模)而不是问题结构的角度(面向问题建模)去思考和建立模型，编程人员必须建立系统模型(方案空间)和问题模型(问题空间)之间的联系，对于编码和后期的维护代价都是比较昂贵的。<br><a id="more"></a></p>
-<h2 id="面向对象编程OOP"><a href="#面向对象编程OOP" class="headerlink" title="面向对象编程OOP"></a>面向对象编程OOP</h2><p>面向对象方法(object-oriented approach)提出了对象(object)的概念表示问题空间中的元素，对象是独立于问题空间的。面向对象编程(OOP)从问题空间的角度而不是机器的角度去考虑问题，每一个对象包含自己的属性和行为，对象之间相互通信构成了问题的解决方案。</p>
-<h2 id="面向对象编程OOP的五个基本特性"><a href="#面向对象编程OOP的五个基本特性" class="headerlink" title="面向对象编程OOP的五个基本特性"></a>面向对象编程OOP的五个基本特性</h2><p>Alan Kay总结了smalltalk的5个面向对象基本特性，smalltalk是第一个成功的面向对象编程语言，Java语言是基于smalltalk而来的。</p>
+        <h1 id="Thinging-in-Java-学习笔记四–Java-finalize方法"><a href="#Thinging-in-Java-学习笔记四–Java-finalize方法" class="headerlink" title="Thinging in Java 学习笔记四–Java finalize方法"></a>Thinging in Java 学习笔记四–Java finalize方法</h1><h2 id="finalize的定义"><a href="#finalize的定义" class="headerlink" title="finalize的定义"></a>finalize的定义</h2><p>finalize()是java.lang.Object类中的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable</span></div></pre></td></tr></table></figure></p>
+<p>在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the finalize method to dispose of system resources or to perform other cleanup.”</p>
+<p>翻译过来就是：当垃圾回收器确定不存在该对象的更多引用时，由对象的垃圾回收器调用此方法。子类重写finalize方法，以配置系统资源或者执行其它清楚工作。</p>
+<a id="more"></a>
+<p>finalize 的常规协定是：</p>
+<ol>
+<li><p>当 JavaTM 虚拟机已确定尚未终止的任何线程无法再通过任何方法访问此对象时，将调用此方法，除非由于准备终止的其他某个对象或类的终结操作执行了某个操作。finalize 方法可以采取任何操作，其中包括再次使此对象对其他线程可用；不过，finalize 的主要目的是在不可撤消地丢弃对象之前执行清除操作。例如，表示输入/输出连接的对象的 finalize 方法可执行显式 I/O 事务，以便在永久丢弃对象之前中断连接。</p>
+</li>
+<li><p>Object 类的 finalize 方法执行非特殊性操作；它仅执行一些常规返回。Object 的子类可以重写此定义。</p>
+</li>
+<li><p>Java 编程语言不保证哪个线程将调用某个给定对象的 finalize 方法。但可以保证在调用 finalize 时，调用 finalize 的线程将不会持有任何用户可见的同步锁定。如果 finalize 方法抛出未捕获的异常，那么该异常将被忽略，并且该对象的终结操作将终止。</p>
+</li>
+<li><p>在启用某个对象的 finalize 方法后，将不会执行进一步操作，直到 Java 虚拟机再次确定尚未终止的任何线程无法再通过任何方法访问此对象，其中包括由准备终止的其他对象或类执行的可能操作，在执行该操作时，对象可能被丢弃。</p>
+</li>
+<li><p>对于任何给定对象，Java 虚拟机最多只调用一次 finalize 方法。</p>
+</li>
+<li><p>finalize 方法抛出的任何异常都会导致此对象的终结操作停止，但可以通过其他方法忽略它。</p>
+</li>
+</ol>
+<h2 id="finalize的作用"><a href="#finalize的作用" class="headerlink" title="finalize的作用"></a>finalize的作用</h2><p>众所周知，初始化在编程中的重要性不言而喻，但是我们往往会忘记同样重要的对象清理工作。在使用程序库时，把一个对象用完弃之不顾的做法并非总是安全的。当然，JVM的垃圾回收器负责回收无用对象的内存空间，但是也有特殊情况：并非所有的对象都是使用new创建的，垃圾回收器只负责释放由new分配的内存，对于不是由new分配的内存空间无能为力，比如通过本地方法调用c或者c++语言分配的内存空间。为了解决这个问题，java允许在类中定义一个名为finalize()的方法，一旦垃圾回收器准备释放对象占用的内存空间，将首先调用finalize()方法，并且在下一次垃圾回收时在会真正回收对象占用的内存。但是有个潜在的编程陷阱，java的finalize()方法与C++中的析构函数是不同的：在C++中，对象一定会被销毁，如果程序没有缺陷的话；而在java中的对象却并非总是能够被垃圾回收，如果内存没有被耗尽的情形，垃圾回收是不会执行的，因为垃圾回收也是要消耗时间的。也就是说：</p>
+<ol>
+<li><strong>对象可能不被垃圾回收。</strong></li>
+<li><strong>垃圾回收并不等于”析构”。</strong></li>
+<li><strong>垃圾回收只与内存有关。</strong></li>
+</ol>
+<p>因此，我们不该将finalize()作为通用的清理方法，那么finalize方法的用途是什么呢？在Thinking in Java中，作者给给出了一个有趣的用法：对象终结条件的验证。</p>
+<p>当某个对象可以被清理的时候，这个对象应该处于某种状态，使用的内存可以被安全地释放。比如对象代表了一个打开的文件，那么在对象被回收之间应该关闭该文件，finalize可以被用来发现这种情况。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</div><div class="line">	<span class="keyword">boolean</span> checkedOut = <span class="keyword">false</span>;</div><div class="line">	Book(<span class="keyword">boolean</span> checkOut) &#123;</div><div class="line">	checkedOut = checkOut;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">checkIn</span><span class="params">()</span> </span>&#123;</div><div class="line">		checkedOut = <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(checkedOut)</div><div class="line">		System.out.println(<span class="string">"Error: checked out"</span>);</div><div class="line">		<span class="comment">// Normally, you’ll also do this:</span></div><div class="line">		<span class="comment">// super.finalize(); // Call the base-class version</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TerminationCondition</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Book novel = <span class="keyword">new</span> Book(<span class="keyword">true</span>);</div><div class="line">		<span class="comment">// Proper cleanup:</span></div><div class="line">		novel.checkIn();</div><div class="line">		<span class="comment">// Drop the reference, forget to clean up:</span></div><div class="line">		<span class="keyword">new</span> Book(<span class="keyword">true</span>);</div><div class="line">		<span class="comment">// Force garbage collection &amp; finalization:</span></div><div class="line">		System.gc();</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	<span class="comment">/* Output:</span></div><div class="line">	Error: checked out</div><div class="line">	*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>本例的终结条件是：所有Book对象在被垃圾回收前都应该执行checkedOut都应该为false。new Book(true)创建了一个匿名对象，可以在finalize()方法进行验证，发现程序的缺陷。</p>
+<p>参考文献：</p>
 <ul>
-<li>所有的东西都是对象。</li>
-<li>程序是由相互传递消息的许多对象构成的。</li>
-<li>对象可以包含其它对象。</li>
-<li>每一个对象都有一个类型。</li>
-<li>所有相同类型的对象可以接受相同的消息。</li>
+<li>《Thinking in Java》</li>
+<li>Java官方文档</li>
 </ul>
-<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><ul>
-<li><strong>类</strong>是一个通用的概念，Java、C++、C#、PHP等很多编程语言中都有类，都可以通过类创建对象，类是一个抽象的概念，对现实世界的东西进行抽象，描述一类对象的行为和状态。</li>
-<li><strong>对象</strong>是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
-</ul>
-<p><img src="\imgs\light.png" alt="image"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Light</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> voltage;</div><div class="line">  <span class="keyword">int</span> power;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">on</span><span class="params">()</span></span>;</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">of</span><span class="params">()</span></span>;</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">brighten</span><span class="params">()</span></span>;</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">dim</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上UML类图描述了类Light的属性和方法，通过<strong>class</strong>关键字定义类,Light是类名，类Light包含两个属性:voltage和power;四个方法:on(),of(),brighten(),dim()。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Light lt  = <span class="keyword">new</span> Light();</div><div class="line">lt.on();</div></pre></td></tr></table></figure>
-<p>通过new关键字创建了一个Light类型的对象，lt是该对象的引用，通过lt对对象进行操作。</p>
-<h2 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>找到变化并且把它封装起来，你就可以在不影响其它部分的情况下修改或扩展被封装的变化部分，这是所有设计模式的基础，就是封装变化，因此封装的作用，就解决了程序的可扩展性。 </p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子类继承父类，可以继承父类的方法及属性，实现了多态以及代码的重用，因此也解决了系统的重用性和扩展性，但是继承破坏了封装，因为他是对子类开放的，修改父类会导致所有子类的改变，因此继承一定程度上又破坏了系统的可扩展性，所以继承需要慎用，只有明确的IS-A关系才能使用，同时继承在在程序开发过程中重构得到的，而不是程序设计之初就使用继承，很多面向对象开发者滥用继承，结果造成后期的代码解决不了需求的变化了。因此优先使用组合，而不是继承，是面向对象开发中一个重要的经验。 </p>
-<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>接口的多种不同的实现方式即为多态。接口是对行为的抽象，刚才在封装提到，找到变化部分并封装起来，但是封装起来后，怎么适应接下来的变化？这正是接口的作用，接口的主要目的是为不相关的类提供通用的处理服务,我们可以想象一下。比如鸟会飞，但是超人也会飞，通过飞这个接口，我们可以让鸟和超人，都实现这个接口，这就实现了系统的可维护性，可扩展性。 </p>
-<h2 id="Java-Object"><a href="#Java-Object" class="headerlink" title="Java Object"></a>Java Object</h2><p>Java单根结构，Java语言的单根结构是指java中所有的类都从一个基类继承，即java.lang.Object。java.lang.Object是所有类的父类，是一个顶级父类，在Java中是唯一没有父类的类。单根结构的优点是：</p>
-<ul>
-<li>所有的类都有同一个基本类型。</li>
-<li>所有的类都继承Objecrt类的基本操作。</li>
-<li>使垃圾回收(garbage collection)更容易实现。</li>
-</ul>
-<p>参考文献：<br>《Think in java》<br><a href="http://www.cnblogs.com/seesea125/archive/2012/04/03/2431176.html" target="_blank" rel="external">http://www.cnblogs.com/seesea125/archive/2012/04/03/2431176.html</a></p>
 
       
     </div>
@@ -539,7 +545,7 @@
           
             <a href="/tags/Thinking-in-Java/" rel="tag">#Thinking in Java</a>
           
-            <a href="/tags/OOP/" rel="tag">#OOP</a>
+            <a href="/tags/finalize/" rel="tag">#finalize</a>
           
         </div>
       
@@ -548,13 +554,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/27/Thinging-in-Java-学习笔记三-Javadoc文档注释/" rel="next" title="Thinging in Java 学习笔记三--Javadoc文档注释">
+                <i class="fa fa-chevron-left"></i> Thinging in Java 学习笔记三--Javadoc文档注释
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/27/Thinking-in-Java-学习笔记二-一切都是对象/" rel="prev" title="Thinking in Java 学习笔记二--一切都是对象">
-                Thinking in Java 学习笔记二--一切都是对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -569,10 +575,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/"
-     data-title="Thinking in Java 学习笔记一--什么是对象"
+        <div class="ds-share flat" data-thread-key="2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/"
+     data-title="Thinging in Java 学习笔记四--Java finalize方法"
      data-content=""
-     data-url="http://huailee.com/2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/">
+     data-url="http://huailee.com/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -602,8 +608,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/"
-           data-title="Thinking in Java 学习笔记一--什么是对象" data-url="http://huailee.com/2016/07/27/Thinking-in-Java-学习笔记一-什么是对象/">
+      <div class="ds-thread" data-thread-key="2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/"
+           data-title="Thinging in Java 学习笔记四--Java finalize方法" data-url="http://huailee.com/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/">
       </div>
     
   </div>
@@ -701,7 +707,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象"><span class="nav-number">1.</span> <span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程OOP"><span class="nav-number">2.</span> <span class="nav-text">面向对象编程OOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程OOP的五个基本特性"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程OOP的五个基本特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类和对象"><span class="nav-number">4.</span> <span class="nav-text">类和对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的三大特征"><span class="nav-number">5.</span> <span class="nav-text">面向对象的三大特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装"><span class="nav-number">5.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">5.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多态"><span class="nav-number">5.3.</span> <span class="nav-text">多态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Object"><span class="nav-number">6.</span> <span class="nav-text">Java Object</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Thinging-in-Java-学习笔记四–Java-finalize方法"><span class="nav-number">1.</span> <span class="nav-text">Thinging in Java 学习笔记四–Java finalize方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize的定义"><span class="nav-number">1.1.</span> <span class="nav-text">finalize的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize的作用"><span class="nav-number">1.2.</span> <span class="nav-text">finalize的作用</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

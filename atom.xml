@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://huailee.com/"/>
-  <updated>2016-07-27T16:21:36.027Z</updated>
+  <updated>2016-08-02T15:10:42.671Z</updated>
   <id>http://huailee.com/</id>
   
   <author>
@@ -13,6 +13,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Thinging in Java 学习笔记四--Java finalize方法]]></title>
+    <link href="http://huailee.com/2016/08/02/Thinging-in-Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B-Java-finalize%E6%96%B9%E6%B3%95/"/>
+    <id>http://huailee.com/2016/08/02/Thinging-in-Java-学习笔记四-Java-finalize方法/</id>
+    <published>2016-08-02T15:07:52.000Z</published>
+    <updated>2016-08-02T15:10:42.671Z</updated>
+    <content type="html"><![CDATA[<h1 id="Thinging-in-Java-学习笔记四–Java-finalize方法"><a href="#Thinging-in-Java-学习笔记四–Java-finalize方法" class="headerlink" title="Thinging in Java 学习笔记四–Java finalize方法"></a>Thinging in Java 学习笔记四–Java finalize方法</h1><h2 id="finalize的定义"><a href="#finalize的定义" class="headerlink" title="finalize的定义"></a>finalize的定义</h2><p>finalize()是java.lang.Object类中的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable</span></div></pre></td></tr></table></figure></p>
+<p>在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the finalize method to dispose of system resources or to perform other cleanup.”</p>
+<p>翻译过来就是：当垃圾回收器确定不存在该对象的更多引用时，由对象的垃圾回收器调用此方法。子类重写finalize方法，以配置系统资源或者执行其它清楚工作。</p>
+<a id="more"></a>
+<p>finalize 的常规协定是：</p>
+<ol>
+<li><p>当 JavaTM 虚拟机已确定尚未终止的任何线程无法再通过任何方法访问此对象时，将调用此方法，除非由于准备终止的其他某个对象或类的终结操作执行了某个操作。finalize 方法可以采取任何操作，其中包括再次使此对象对其他线程可用；不过，finalize 的主要目的是在不可撤消地丢弃对象之前执行清除操作。例如，表示输入/输出连接的对象的 finalize 方法可执行显式 I/O 事务，以便在永久丢弃对象之前中断连接。</p>
+</li>
+<li><p>Object 类的 finalize 方法执行非特殊性操作；它仅执行一些常规返回。Object 的子类可以重写此定义。</p>
+</li>
+<li><p>Java 编程语言不保证哪个线程将调用某个给定对象的 finalize 方法。但可以保证在调用 finalize 时，调用 finalize 的线程将不会持有任何用户可见的同步锁定。如果 finalize 方法抛出未捕获的异常，那么该异常将被忽略，并且该对象的终结操作将终止。</p>
+</li>
+<li><p>在启用某个对象的 finalize 方法后，将不会执行进一步操作，直到 Java 虚拟机再次确定尚未终止的任何线程无法再通过任何方法访问此对象，其中包括由准备终止的其他对象或类执行的可能操作，在执行该操作时，对象可能被丢弃。</p>
+</li>
+<li><p>对于任何给定对象，Java 虚拟机最多只调用一次 finalize 方法。</p>
+</li>
+<li><p>finalize 方法抛出的任何异常都会导致此对象的终结操作停止，但可以通过其他方法忽略它。</p>
+</li>
+</ol>
+<h2 id="finalize的作用"><a href="#finalize的作用" class="headerlink" title="finalize的作用"></a>finalize的作用</h2><p>众所周知，初始化在编程中的重要性不言而喻，但是我们往往会忘记同样重要的对象清理工作。在使用程序库时，把一个对象用完弃之不顾的做法并非总是安全的。当然，JVM的垃圾回收器负责回收无用对象的内存空间，但是也有特殊情况：并非所有的对象都是使用new创建的，垃圾回收器只负责释放由new分配的内存，对于不是由new分配的内存空间无能为力，比如通过本地方法调用c或者c++语言分配的内存空间。为了解决这个问题，java允许在类中定义一个名为finalize()的方法，一旦垃圾回收器准备释放对象占用的内存空间，将首先调用finalize()方法，并且在下一次垃圾回收时在会真正回收对象占用的内存。但是有个潜在的编程陷阱，java的finalize()方法与C++中的析构函数是不同的：在C++中，对象一定会被销毁，如果程序没有缺陷的话；而在java中的对象却并非总是能够被垃圾回收，如果内存没有被耗尽的情形，垃圾回收是不会执行的，因为垃圾回收也是要消耗时间的。也就是说：</p>
+<ol>
+<li><strong>对象可能不被垃圾回收。</strong></li>
+<li><strong>垃圾回收并不等于”析构”。</strong></li>
+<li><strong>垃圾回收只与内存有关。</strong></li>
+</ol>
+<p>因此，我们不该将finalize()作为通用的清理方法，那么finalize方法的用途是什么呢？在Thinking in Java中，作者给给出了一个有趣的用法：对象终结条件的验证。</p>
+<p>当某个对象可以被清理的时候，这个对象应该处于某种状态，使用的内存可以被安全地释放。比如对象代表了一个打开的文件，那么在对象被回收之间应该关闭该文件，finalize可以被用来发现这种情况。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</div><div class="line">	<span class="keyword">boolean</span> checkedOut = <span class="keyword">false</span>;</div><div class="line">	Book(<span class="keyword">boolean</span> checkOut) &#123;</div><div class="line">	checkedOut = checkOut;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">checkIn</span><span class="params">()</span> </span>&#123;</div><div class="line">		checkedOut = <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(checkedOut)</div><div class="line">		System.out.println(<span class="string">"Error: checked out"</span>);</div><div class="line">		<span class="comment">// Normally, you’ll also do this:</span></div><div class="line">		<span class="comment">// super.finalize(); // Call the base-class version</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TerminationCondition</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Book novel = <span class="keyword">new</span> Book(<span class="keyword">true</span>);</div><div class="line">		<span class="comment">// Proper cleanup:</span></div><div class="line">		novel.checkIn();</div><div class="line">		<span class="comment">// Drop the reference, forget to clean up:</span></div><div class="line">		<span class="keyword">new</span> Book(<span class="keyword">true</span>);</div><div class="line">		<span class="comment">// Force garbage collection &amp; finalization:</span></div><div class="line">		System.gc();</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	<span class="comment">/* Output:</span></div><div class="line">	Error: checked out</div><div class="line">	*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>本例的终结条件是：所有Book对象在被垃圾回收前都应该执行checkedOut都应该为false。new Book(true)创建了一个匿名对象，可以在finalize()方法进行验证，发现程序的缺陷。</p>
+<p>参考文献：</p>
+<ul>
+<li>《Thinking in Java》</li>
+<li>Java官方文档</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Thinging-in-Java-学习笔记四–Java-finalize方法"><a href="#Thinging-in-Java-学习笔记四–Java-finalize方法" class="headerlink" title="Thinging in Java 学习笔记四–Java finalize方法"></a>Thinging in Java 学习笔记四–Java finalize方法</h1><h2 id="finalize的定义"><a href="#finalize的定义" class="headerlink" title="finalize的定义"></a>finalize的定义</h2><p>finalize()是java.lang.Object类中的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable</span></div></pre></td></tr></table></figure></p>
+<p>在Java官方文档中的定义是：”Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. A subclass overrides the finalize method to dispose of system resources or to perform other cleanup.”</p>
+<p>翻译过来就是：当垃圾回收器确定不存在该对象的更多引用时，由对象的垃圾回收器调用此方法。子类重写finalize方法，以配置系统资源或者执行其它清楚工作。</p>]]>
+    
+    </summary>
+    
+      <category term="Java" scheme="http://huailee.com/tags/Java/"/>
+    
+      <category term="Thinking in Java" scheme="http://huailee.com/tags/Thinking-in-Java/"/>
+    
+      <category term="finalize" scheme="http://huailee.com/tags/finalize/"/>
+    
+      <category term="Java" scheme="http://huailee.com/categories/Java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Thinging in Java 学习笔记三--Javadoc文档注释]]></title>
